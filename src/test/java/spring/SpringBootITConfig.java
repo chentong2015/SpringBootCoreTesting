@@ -15,8 +15,7 @@ public class SpringBootITConfig {
 
     @Bean
     ObjectNamingStrategy objectNamingStrategy() {
-        ParentAwareNamingStrategy strategy = new ParentAwareNamingStrategy(
-                new AnnotationJmxAttributeSource());
+        ParentAwareNamingStrategy strategy = new ParentAwareNamingStrategy(new AnnotationJmxAttributeSource());
         strategy.setEnsureUniqueRuntimeObjectNames(true);
         return strategy;
     }

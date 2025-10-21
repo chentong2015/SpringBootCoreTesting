@@ -1,9 +1,9 @@
-TODO. Spring Context Bean 可被替换，易于测试
-- Spring profiles        配置不同profile来移除
-- @MockBean/MockitoBean  使用Mock Bean替换
-- @ConditionalOnProperty 通过属性值来移除
-- @EnableAutoConfiguration(exclude=NotIncludedConfig.class) 通过Config移除Bean
+TODO. 为什么Spring Boot IT易于测试 ?
+- Spring profiles        通过profile来移除Configuration
+- @ConditionalOnProperty 通过属性值来移除Configuration
+- @MockBean/MockitoBean  使用Mockito来替换注入的Bean对象
+- @EnableAutoConfiguration(exclude=ExcludedAutoConfigClass.class) 移除自动装配的Bean对象
 
-Spring context cache 提升集成测试的时间
- - 集成测试需要准备ApplicationContext init需要时间
- - 并行的测试，缓存中state of context可能出错
+Spring context cache 提升集成测试时间
+- 集成测试需要准备ApplicationContext init需要时间
+- 并行的测试，缓存中state of context可能出错
