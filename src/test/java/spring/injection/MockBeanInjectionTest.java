@@ -9,7 +9,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 @SpringBootTest
 public class MockBeanInjectionTest {
 
-    // Mock掉Spring Context中注入的Bean对象
+    // TODO. Mock掉Spring Context中注入的Bean对象
     @MockitoBean
     private BeanInjection beanInjection;
 
