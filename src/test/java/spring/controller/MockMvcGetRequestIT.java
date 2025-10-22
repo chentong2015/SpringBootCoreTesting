@@ -31,10 +31,13 @@ public class MockMvcGetRequestIT {
                 .andExpect(content().string("Index Page"));
     }
 
+    // {"item 1", "item 2", "item 3"} 测试返回的List数据结果
     @Test
     void get_response_list_string() throws Exception {
         mockMvc.perform(get("/list").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
+                .andExpect((ResultMatcher) jsonPath("$[0]").value("item 1"))
+                .andExpect((ResultMatcher) jsonPath("$.length()").value(3))
                 .andExpect(content().json("[\"item 1\", \"item 2\", \"item 3\"]"));
     }
 
