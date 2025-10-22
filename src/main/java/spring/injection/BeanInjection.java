@@ -1,4 +1,4 @@
-package spring.bean;
+package spring.injection;
 
 import org.springframework.stereotype.Component;
 

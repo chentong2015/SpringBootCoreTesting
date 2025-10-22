@@ -1,4 +1,4 @@
-package spring.mock_mvc;
+package spring.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
@@ -20,17 +20,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class MockMvcDemo2IT {
+public class MockMvcPostRequestIT {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @Test
-    void get_index() throws Exception {
-        mockMvc.perform(get("/index").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Index Page"));
-    }
 
     @Test
     void test_with_param() throws Exception {
