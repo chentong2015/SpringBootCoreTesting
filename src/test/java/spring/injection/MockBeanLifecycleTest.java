@@ -1,6 +1,7 @@
 package spring.injection;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -16,11 +17,18 @@ public class MockBeanLifecycleTest {
     @MockitoBean
     private BeanLifecycle beanLifecycle;
 
+    // TODO. BeforeAll启动在SpringContext容器启动之前, 但无法修改Mock对象
+    @BeforeAll
+    static void beforeAll() {
+        System.out.println("Run beforeAll");
+    }
+
     // TODO. BeforeEach方法的执行是在SpringContext容器启动完成后
-    //  如果Spring容器启动时需要判断创建的Mock对象, 可能属性Null导致启动失败 !!
+    //  如果Spring容器启动时需要调用Mock对象, 可能属性Null导致启动失败 !!
     @BeforeEach
     public void beforeEach() {
         // 仅对单元测试生效
+        System.out.println("Run beforeEach");
         Mockito.when(this.beanLifecycle.getBeanProperty()).thenReturn(new BeanProperty());
     }
 

@@ -8,7 +8,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import spring.config.IncludeContextConfig;
-import spring.config.MyProfileConfig;
 import spring.service.HomeService;
 
 // TODO. Spring IT 测试类不能位于空包路径下
@@ -22,7 +21,7 @@ import spring.service.HomeService;
 @ContextConfiguration(classes = {IncludeContextConfig.class}) // 指定Spring Context容器配置
 @ExtendWith(SpringExtension.class) // 添加Extension扩展，控制测试前后执行逻辑
 @ActiveProfiles("test") // 激活测试的Profile，避免注入特定的Bean
-public class SpringBootITTest {
+public class SpringBootItTest {
 
     // TODO. 不能在测试类型中直接添加@Bean方法
     // Test Class cannot include @Bean methods
