@@ -1,0 +1,9 @@
+TODO. Application Context Cache 集成测试的缓存问题
+1. 启动Application Context容器需要时间
+2. 缓存Application Context容器可能造成state of context出错, 影响测试判断
+
+@SpringBootTest 默认每个测试类型共享同一个Context
+@DirtiesContext 确保每个测试结束后清除cache
+spring.test.context.cache.maxSize=50 设置允许的最大缓存数量
+
+https://www.baeldung.com/spring-boot-testing-pitfalls

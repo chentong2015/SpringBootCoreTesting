@@ -13,8 +13,7 @@ import spring.service.HomeService;
 // TODO. Spring IT 测试类不能位于空包路径下
 // @SpringBootTest自动找到主启动类@SpringBootApplication
 // @SpringBootTest会启动整个Spring Boot容器, 根据Package包路径查找
-@SpringBootTest(
-        classes = SpringBootTestingApplication.class,
+@SpringBootTest(classes = SpringBootTestingApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, // 配置随机端口
         properties = {"custom.property.name=test-value"})           // 为测试设置特殊属性值
 @TestPropertySource(locations = "classpath:application-it.properties") // 使用特定properties属性
