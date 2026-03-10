@@ -7,6 +7,11 @@
     <groupId>org.example</groupId>
     <artifactId>SpringBootCoreTesting</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>context-caching</module>
+        <module>boot-integration-test</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,7 +23,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.5.6</version>
+            <version>4.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -26,10 +31,12 @@
             <version>2.0.16</version>
         </dependency>
 
+        <!-- TODO. Spring Boot Test测试框架:
+        Migrate to JUnit Jupiter 6, not support JUnit 4 framework -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.5.6</version>
+            <version>4.0.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
